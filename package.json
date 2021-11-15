@@ -5,13 +5,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.24.0",
+    "cheerio": "^1.0.0-rc.10",
     "dotenv": "^10.0.0",
     "linebot": "^1.6.1"
   },
