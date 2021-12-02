@@ -1,12 +1,12 @@
 {
   "type": "module",
-  "name": "test",
+  "name": "20211115",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +15,7 @@
     "axios": "^0.24.0",
     "cheerio": "^1.0.0-rc.10",
     "dotenv": "^10.0.0",
-    "linebot": "^1.6.1",
-    "node-schedule": "^2.0.0"
+    "linebot": "^1.6.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
