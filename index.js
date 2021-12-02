@@ -1,7 +1,8 @@
 import 'dotenv/config'
 import linebot from 'linebot'
-import axios from 'axios'
-import cheerio from 'cheerio'
+import folk from './folk.js'
+import './data2.js'
+import './data.js'
 
 const bot = linebot({
   channelId: process.env.CHANNEL_ID,
@@ -10,25 +11,11 @@ const bot = linebot({
 })
 
 bot.on('message', async (event) => {
-  if (event.message.type === 'text' && event.message.text === '課程') {
-    try {
-      const { data } = await axios.get('https://wdaweb.github.io/')
-      const $ = cheerio.load(data)
-      const replies = []
-      for (let i = 0; i < $('#go .col-lg-3.col-md-6').length; i++) {
-        replies.push(`
-        課程名稱:\n
-        ${$('#go .col-lg-3.col-md-6').eq(i).find('h4').text()}\n
-        報名資訊:\n
-        ${$('#go .col-lg-3.col-md-6').eq(3).find('.card-description').text().trim().replace(/\t/g, '')}\n
-        `)
-      }
-      event.reply(replies)
-      console.log(replies)
-    } catch (error) {
-      console.log(error)
-      event.reply('錯誤')
-    }
+  console.log(event.message.text)
+  if (event.message.type === 'text') {
+    folk(event)
+  } else {
+    console.log('error')
   }
 })
 
